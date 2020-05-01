@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import CardList from '../components/CardList'
-import SearchBox from '../components/SearchBox'
-import Scroll from '../components/Scroll'
+import CardList from '../components/CardList/CardList'
+import SearchBox from '../components/SearchBox/SearchBox'
+import Scroll from '../components/Scroll/Scroll'
 
 import { setSearchField, requestRobots } from '../actions'
 
@@ -34,7 +34,7 @@ const App = ({ searchField, onSearchChange, requestRobots, robots, isPending }) 
     <h1 className="tc">Loading</h1>
   ) : (
     <div className="tc">
-      <h1 className="f1">RobotFriends</h1>
+      <h1 className="f1-ns f2">RobotFriends</h1>
       <SearchBox searchChange={onSearchChange} />
       <Scroll>
         <CardList robots={filterRobots} />
