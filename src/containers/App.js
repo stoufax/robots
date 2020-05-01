@@ -16,17 +16,15 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
-    onRequestRobots: () => dispatch(requestRobots())
-  }
+const mapDispatchToProps = {
+  onSearchChange: (event) => setSearchField(event.target.value),
+  requestRobots
 }
 
-const App = ({ searchField, onSearchChange, onRequestRobots, robots, isPending }) => {
+const App = ({ searchField, onSearchChange, requestRobots, robots, isPending }) => {
   useEffect(() => {
-    onRequestRobots()
-  }, [onRequestRobots])
+    requestRobots()
+  }, [requestRobots])
 
   const filterRobots = robots.filter((robot) => {
     return robot.name.toLowerCase().includes(searchField.toLowerCase())
