@@ -24,14 +24,14 @@ const initialStateRobots = {
   error: ''
 }
 
-export const requestRobots = (state = initialStateRobots, action = {}) => {
-  switch (action.type) {
+export const requestRobots = (state = initialStateRobots, { type, payload }) => {
+  switch (type) {
     case REQUEST_ROBOTS_PENDING:
       return Object.assign({}, state, { isPending: true })
     case REQUEST_ROBOTS_FULFILLED:
-      return Object.assign({}, state, { robots: action.payload, isPending: false })
+      return Object.assign({}, state, { robots: payload, isPending: false })
     case REQUEST_ROBOTS_REJECTED:
-      return Object.assign({}, state, { error: action.payload, isPending: false })
+      return Object.assign({}, state, { error: payload, isPending: false })
     default:
       return state
   }

@@ -1,4 +1,5 @@
 import { CHANGE_SEARCH_FIELD, REQUEST_ROBOTS } from './constants'
+import { backend } from './services'
 
 export const setSearchField = (text) => ({
   type: CHANGE_SEARCH_FIELD,
@@ -7,5 +8,5 @@ export const setSearchField = (text) => ({
 
 export const requestRobots = () => ({
   type: REQUEST_ROBOTS,
-  payload: fetch('https://jsonplaceholder.typicode.com/users').then((data) => data.json())
+  payload: backend.fetchRobots()
 })
