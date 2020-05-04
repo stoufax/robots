@@ -1,0 +1,7 @@
+.search {
+  border-radius: 50px;
+  max-width: 500px;
+  width: 100%;
+  background: #cdecff right 9px center no-repeat url('../../assets/search.svg');
+  outline: none;
+}
