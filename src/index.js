@@ -12,6 +12,7 @@ import registerServiceWorker from './registerServiceWorker'
 
 import 'tachyons'
 import './index.css'
+import './styles/tailwind.generated.css'
 
 const logger = createLogger()
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
